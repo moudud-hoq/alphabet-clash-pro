@@ -11,6 +11,11 @@ function showElementById(elementId) {
     element.classList.remove('hidden')
 }
 
+function setBackgroundColorById(elementId){
+    const element=document.getElementById(elementId)
+    element.classList.add('bg-yellow-500');
+}
+
 //Step-2: Get a Random Alphabet
 //get or create an alphabets
 function getARandomAlphabet() {
