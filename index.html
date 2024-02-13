@@ -20,29 +20,28 @@
 <body class="font-poppins">
     <main class="min-h-screen bg-[#010313] bg-[url(images/background.png)] bg-no-repeat bg-center">
         <!-- Home Section -->
-        <section class="home min-h-screen text-white flex justify-center items-center">
+        <section id="home-screen" class="home1 min-h-screen text-white flex justify-center items-center">
             <div class="flex flex-col justify-center items-center gap-10">
                 <h1 class="text-8xl font-mono uppercase">Alpha Clash Pro</h1>
                 <p>Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
-                <button class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Play</button>
+                <button onclick="play()" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Play</button>
             </div>
         </section>
 
         <!-- Play Ground Start -->
-        <section class="play-ground hidden">
-            <div class="space-y-12 flex flex-col gap-12 justify-center items-center min-h-screen pt-24">
+        <section id="play-ground" class="play-ground1 hidden">
+            <div class="space-y-7 flex flex-col justify-center items-center min-h-screen pt-24">
                 <!--  playground screen-->
                 <div
                     class="artboard artboard-horizontal phone-6 bg-white opacity-70 border-[20px]  border-slate-700 rounded-xl r">
                     <div class="text-center">
-                        <span class="bg-slate-700 text-white text-xl px-6 py-3 p-[-10] rounded-xl"> Don't watch keyboard
+                        <span class="bg-slate-700 text-white text-xl px-6 py-3 rounded-xl"> Don't watch keyboard
                             while playing..........</span>
                     </div>
                     <div class=" flex justify-center items-center h-full">
                         <p class="text-black text-9xl font-bold">Y</p>
                     </div>
                 </div>
-
 
                 <!-- Keyboard Start-->
                 <div>
@@ -99,7 +98,7 @@
         <!-- Play Ground End -->
 
         <!-- Final Score Section -->
-        <section class="score h-full flex justify-center items-center min-h-screen hidden">
+        <section class="score hidden h-full flex justify-center items-center min-h-screen ">
             <div class="text-white text-center space-y-8 bg-slate-500 p-9 rounded-xl">
                 <h1 class="text-6xl">
                     <span class="font-extrabold">Score:</span>
@@ -112,6 +111,7 @@
     </main>
 
     <!-- Javascript Files -->
+    <script src="js/utility.js"></script>
     <script src="js/main.js"></script>
 </body>
 
