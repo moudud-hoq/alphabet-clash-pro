@@ -11,8 +11,22 @@
 //     // console.log(homeSection.classList)
 // }
 
+function continueGame() {
+    //Step-1: generate a random alphabet
+    const alphabet = getARandomAlphabet();
+
+    //set randomly generated alphabets to the screen
+    const currentAlphabetElement = document.getElementById('current-alphabet')
+
+    currentAlphabetElement.innerText = alphabet;
+}
+
+
+
+//Step: 1
 function play() {
     hideElementById('home-screen');
     showElementById('play-ground');
+    continueGame()
 }
 
