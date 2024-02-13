@@ -8,6 +8,8 @@
 
     <!-- Style File -->
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
 
     <!-- Daisy UI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -27,12 +29,21 @@
         </section>
 
         <!-- Play Ground Start -->
-        <section class="play-ground flex flex-col gap-12 justify-center items-center min-h-screen">
-            <div class="space-y-12">
+        <section class="play-ground hidden">
+            <div class="space-y-12 flex flex-col gap-12 justify-center items-center min-h-screen pt-24">
                 <!--  playground screen-->
                 <div
-                    class="bg-white opacity-70 border-[20px] artboard artboard-horizontal phone-6 border-slate-700 rounded-xl">
-                    1024×320</div>
+                    class="artboard artboard-horizontal phone-6 bg-white opacity-70 border-[20px]  border-slate-700 rounded-xl r">
+                    <div class="text-center">
+                        <span class="bg-slate-700 text-white text-xl px-6 py-3 p-[-10] rounded-xl"> Don't watch keyboard
+                            while playing..........</span>
+                    </div>
+                    <div class=" flex justify-center items-center h-full">
+                        <p class="text-black text-9xl font-bold">Y</p>
+                    </div>
+                </div>
+
+
                 <!-- Keyboard Start-->
                 <div>
                     <div class="flex justify-center gap-1 my-1 w-full">
@@ -72,10 +83,15 @@
                 <!-- Keyboard End -->
 
                 <!-- Life line -->
-                <div class="flex justify-between items-center">
-                    <button class="btn bg-[#894189] text-white">Button</button>
-                    <button class="btn bg-[#360490] text-white">Button</button>
-
+                <div class="flex justify-between w-3/4 items-center">
+                    <button class="btn bg-[#894189] text-white rounded-2xl"> Score<span
+                            class="material-symbols-outlined">
+                            favorite
+                        </span>1</button>
+                    <button class="btn bg-[#360490] text-white rounded-2xl">Life<span
+                            class="material-symbols-outlined caret-yellow-50">
+                            monetization_on
+                        </span>1</button>
                 </div>
             </div>
 
