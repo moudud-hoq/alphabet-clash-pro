@@ -8,9 +8,9 @@
 
     <!-- Style File -->
     <link rel="stylesheet" href="styles/style.css">
-    <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap" rel="stylesheet"> -->
+    <!-- Google icon -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 
     <!-- Daisy UI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.0/dist/full.min.css" rel="stylesheet" type="text/css" />
@@ -34,12 +34,6 @@
             </div>
         </section>
         <!-- End Home Section -->
-
-
-
-
-
-
 
         <!-- Play Ground Start -->
         <section id="play-ground" class="play-ground1 hidden">
@@ -97,14 +91,21 @@
 
                 <!-- Life line -->
                 <div class="flex justify-between w-3/4 items-center">
-                    <button class="btn bg-[#894189] text-white rounded-2xl"> Score<span
-                            class="material-symbols-outlined">
-                            favorite
-                        </span>1</button>
-                    <button class="btn bg-[#360490] text-white rounded-2xl">Life<span
-                            class="material-symbols-outlined caret-yellow-50">
-                            monetization_on
-                        </span>1</button>
+
+                    <!-- Display l;ife -->
+                    <button class="btn bg-[#894189] text-white rounded-2xl">Life
+                        <span class="material-symbols-outlined">
+                        </span>1
+                    </button>
+
+                    <!-- Display Score -->
+                    <button class="btn bg-[#360490] text-white rounded-2xl">Score
+                        <span class="material-symbols-outlined caret-yellow-50">
+                        </span>
+                        <span id="current-score">0
+                        </span>
+                    </button>
+
                 </div>
             </div>
 

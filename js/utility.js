@@ -14,6 +14,12 @@ function setBackgroundColorById(elementId) {
     element.classList.add('bg-yellow-500');
 }
 
+function removeBackgroundColorById(elementId) {
+    const element = document.getElementById(elementId)
+    element.classList.remove('bg-yellow-500');
+}
+
+
 function setTextSizeById(elementId) {
     const element = document.getElementById(elementId);
     element.classList.add('text-xl')
