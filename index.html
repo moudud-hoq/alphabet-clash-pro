@@ -22,11 +22,13 @@
         <!-- Home Section -->
         <section id="home-screen" class="home1 min-h-screen text-white flex justify-center items-center">
             <div class="flex flex-col justify-center items-center gap-10">
-                <h1 class="text-8xl font-mono uppercase">Alpha Clash Pro</h1>
+                <h1 id="alpha-text" onmouseover="mouseOverFunction()" onmouseout="mouseOutFunction()"
+                    class="text-8xl font-mono uppercase">Alpha Clash Pro</h1>
                 <p>Unleash Your Keyboard Kung Fu : Press “Enter” to Play</p>
                 <button onclick="play()" class="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg">Play</button>
             </div>
         </section>
+        <!-- End Home Section -->
 
         <!-- Play Ground Start -->
         <section id="play-ground" class="play-ground1 hidden">
@@ -35,8 +37,9 @@
                 <div
                     class="artboard artboard-horizontal phone-6 bg-white opacity-70 border-[20px]  border-slate-700 rounded-xl r">
                     <div class="text-center">
-                        <span class="bg-slate-700 text-white text-xl px-6 py-3 rounded-xl"> Don't watch keyboard
-                            while playing..........</span>
+                        <span id="playground-text-size" class="bg-slate-700 text-white text-xl px-6 py-3 rounded-xl">
+                            Don't
+                            watch keyboard while playing..........</span>
                     </div>
                     <div class=" flex justify-center items-center h-full">
                         <p id="current-alphabet" class="text-black text-9xl font-bold uppercase">Y</p>
@@ -108,6 +111,7 @@
                 <p>Practice will make you Pro</p>
             </div>
         </section>
+        <!-- End Final Score Section -->
     </main>
 
     <!-- Javascript Files -->
