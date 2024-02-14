@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>accessKey উদাহরণ</title>
+</head>
+
+<body>
+    <p>এই পৃষ্ঠায় নেভিগেট করতে কিবোর্ড শর্টকাট ব্যবহার করুন:</p>
+    <ul>
+        <li><a href="news.html" accesskey="N">সংবাদ (Alt+N)</a></li>
+        <li><a href="contact.html" accesskey="C">যোগাযোগ (Alt+C)</a></li>
+        <li><input type="text" placeholder="নাম (Alt+T)" accesskey="T"></li>
+    </ul>
+
+    <script>
+        function accessKeyHandler(event) {
+            // পৃষ্ঠায় `accessKey` সেট করা সমস্ত উপাদান খুঁজুন
+            const elements = document.querySelectorAll("[accesskey]");
+
+            // চাপা কি ধরা
+            const pressedKey = event.key.toLowerCase();
+
+            // উপাদানগুলিতে পুনরাবৃত্তি করুন এবং শর্টকাট মেলে কিনা তা পরীক্ষা করুন
+            elements.forEach(element => {
+                const accessKey = element.getAttribute("accesskey").toLowerCase();
+                if (pressedKey === accessKey) {
+                    // মेल খেলে, উপাদানের ডিফল্ট আচরণ ট্রিগার করুন
+                    event.preventDefault();
+                    element.click(); // লিঙ্কের জন্য
+                    element.focus(); // ইনপুট ফিল্ডের জন্য
+                }
+            });
+        }
+
+        // ইভেন্ট শ্রোতা যুক্ত করুন
+        document.addEventListener("keydown", accessKeyHandler);
+
+    </script>
+</body>
+
+</html>

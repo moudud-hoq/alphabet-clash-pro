@@ -1,29 +1,88 @@
-    // Function to change font size by element ID
-    function setFontSizeById(elementId) {
-        const element = document.getElementById(elementId);
-        element.classList.add('text-5xl');
-    }
+//STep-1
+function hideElementById(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.add('hidden');
+}
 
-    // Function to change font color by element ID
-    function setFontColorById(elementId, color) {
-        const element = document.getElementById(elementId);
-        element.style.color = color;
-    }
+function showElementById(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.remove('hidden');
+}
 
-    // Function to change font family by element ID
-    function setFontFamilyById(elementId) {
-        const element = document.getElementById(elementId);
-        element.style.fontFamily = "Arial, sans-serif";
-    }
+function setBackgroundColorById(elementId) {
+    const element = document.getElementById(elementId);
+    element.classList.add('bg-yellow-500');
+}
 
-    // Function to apply changes in the Home Section
-    function myChangesInHomeSection() {
-        setFontSizeById('alpha-text');
-        setFontColorById('alpha-text', 'blue'); // Change color here
-        setFontFamilyById('alpha-text');
-    }
+//Step-2: Get a Random Alphabet
+//get or create an alphabets
+function getARandomAlphabet() {
+    //Create an alphabets and store in a variable
+    const alphabetString = 'abcdefghijklmnopqrstuvwxy';
 
-    // Function to execute changes when play button is clicked
-    function love() {
-        myChangesInHomeSection();
-    }
+    //create an empty array
+    const alphabets = alphabetString.split('');
+
+    //Get a random index between 0-25
+    const randomNumber = Math.random() * 25;
+    const indexOfNumber = Math.round(randomNumber);
+
+    //send the index to alphabet
+    const alphabet = alphabets[indexOfNumber];
+    return alphabet;
+}
+
+// function play() {
+//     //step-1; hide the home screen. To hide the screen and the class hidden to the home section
+
+//     const homeSection = document.getElementById('home-screen');
+//     homeSection.classList.add('hidden')
+
+//     //show the play ground
+//     const playgroundSection = document.getElementById('play-ground');
+//     playgroundSection.classList.remove('hidden')
+
+//     // console.log(homeSection.classList)
+// }
+
+
+function continueGame() {
+    //Step-1: generate a random alphabet
+    const alphabet = getARandomAlphabet();
+
+    //set randomly generated alphabets to the screen
+    const currentAlphabetElement = document.getElementById('current-alphabet')
+    currentAlphabetElement.innerText = alphabet;
+    setBackgroundColorById(alphabet);
+
+    // Change the text color
+    setTextColorById('playground-text');
+
+    //Chnage playground-text-size
+    setTextSizeById('playground-text-size');
+}
+
+//set background color
+//Step: 1
+function play() {
+    hideElementById('home-screen');
+    showElementById('play-ground');
+    continueGame()
+}
+
+
+//Mouseover function in home section title
+let hoverTimeout;
+
+function mouseOverFunction() {
+    hoverTimeout = setTimeout(() => {
+        setBackgroundColorById('alpha-text');
+    }, 300); // Change delay time as per your requirement (in milliseconds)
+}
+
+function mouseOutFunction() {
+    clearTimeout(hoverTimeout);
+    // Reset the background color when the mouse moves out
+    const element = document.getElementById('alpha-text');
+    element.classList.remove('bg-yellow-500');
+}

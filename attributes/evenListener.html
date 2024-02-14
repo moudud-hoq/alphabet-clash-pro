@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Event Listeners</title>
+</head>
+<body>
+
+<button id="myButton">Click me</button>
+
+<script>
+// এক্সিস্টিং ফাংশন যোগ করা
+function handleClick() {
+    alert('Button clicked!');
+}
+
+// ইভেন্ট লিস্টেনার যোগ করা
+document.getElementById("myButton").addEventListener("click", handleClick);
+
+// ইভেন্ট লিস্টেনার অপসারণ
+function removeClickListener() {
+    document.getElementById("myButton").removeEventListener("click", handleClick);
+    alert('Event listener removed!');
+}
+
+// বাটনে ক্লিক করে ইভেন্ট লিস্টেনার অপসারণ করা
+document.getElementById("myButton").onclick = removeClickListener;
+</script>
+
+</body>
+</html>

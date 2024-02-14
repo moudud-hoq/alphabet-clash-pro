@@ -11,41 +11,33 @@
 //     // console.log(homeSection.classList)
 // }
 
-
-function continueGame() {
-    //Step-1: generate a random alphabet
-    const alphabet = getARandomAlphabet();
-
-    //set randomly generated alphabets to the screen
-    const currentAlphabetElement = document.getElementById('current-alphabet')
+function continueGame() /*3*/ {
+    const alphabet = getARandomAlphabet();/*Step-1: generate a random alphabet*/
+    const currentAlphabetElement = document.getElementById('current-alphabet')/*set randomly generated alphabets to the screen*/
     currentAlphabetElement.innerText = alphabet;
     setBackgroundColorById(alphabet);
-
-    // Change the text color
-    setTextColorById('playground-text');
-
-    //Chnage playground-text-size
-    setTextSizeById('playground-text-size');
 }
 
-//set background color
-//Step: 1
+function personlChanges() {
+    setTextSizeById('playground-text-size');
+}//Function Personal Changes
+
+
 function play() {
     hideElementById('home-screen');
     showElementById('play-ground');
-    continueGame()
-}
+    continueGame()//3
+    personlChanges()
+}//Step: 1
 
 
 //Mouseover function in home section title
 let hoverTimeout;
-
 function mouseOverFunction() {
     hoverTimeout = setTimeout(() => {
         setBackgroundColorById('alpha-text');
     }, 300); // Change delay time as per your requirement (in milliseconds)
 }
-
 function mouseOutFunction() {
     clearTimeout(hoverTimeout);
     // Reset the background color when the mouse moves out
