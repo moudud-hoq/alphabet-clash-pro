@@ -48,6 +48,8 @@ function handleKeyboardKeyUpEvent(event) {
 
         if (updatedLife === 0) {
             gameOver();
+        } else {
+
         }
 
 
@@ -80,16 +82,22 @@ function personlChanges() {
 
 
 function play() {
+    //Hide everything show only the playground
     hideElementById('home-screen');
+    hideElementById('final-score');
     showElementById('play-ground');
+
+    //Reset score and life
+    setTextElementValueById('current-life', 5 )
     continueGame()//3
-    personlChanges()
 }//Step: 1
 
 function gameOver() {
     hideElementById('play-ground');
     showElementById('final-score');
 }
+
+
 
 
 
