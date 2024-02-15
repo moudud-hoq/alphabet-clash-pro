@@ -14,6 +14,8 @@
 function handleKeyboardKeyUpEvent(event) {
     const playerPressed = event.key
 
+    //Stop Game If Do not want play
+
     //get expected to press
     const currentAlphabetElement = document.getElementById('current-alphabet');
     const currentAlphabet = currentAlphabetElement.innerText;
@@ -88,13 +90,23 @@ function play() {
     showElementById('play-ground');
 
     //Reset score and life
-    setTextElementValueById('current-life', 5 )
+    setTextElementValueById('current-life', 5);
+    setTextElementValueById('current-score', 0);
     continueGame()//3
 }//Step: 1
 
 function gameOver() {
     hideElementById('play-ground');
     showElementById('final-score');
+
+    //Update the last score
+    const lastScore = getTextElementValueById('current-score');
+    console.log(lastScore)
+    setTextElementValueById('last-score', lastScore)
+
+    //clear the last selected alphabet highlight
+    const currentAlphabet = getElementTextById('current-alphabet');
+    removeBackgroundColorById(currentAlphabet);
 }
 
 
