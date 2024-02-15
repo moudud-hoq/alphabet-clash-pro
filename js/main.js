@@ -21,30 +21,51 @@ function handleKeyboardKeyUpEvent(event) {
 
     //check matched or not
     if (playerPressed === expectedAlphabet) {
+        const currentScore = getTextElementValueById('current-score');//score updating
+        // console.log(currentScore);
+        const updatedScore = currentScore + 1;
+        setTextElementValueById('current-score', updatedScore);
 
-
-        //update score
-        // 1. get the current score
-        const currentScoreElement = document.getElementById('current-score');
-        const currentScoreText = currentScoreElement.innerText;
-        const currentScore = parseInt(currentScoreText);
-        // 2.increase the score
+        // ---------------------------------------------------------
+        // //update score
+        // // 1. get the current score
+        // const currentScoreElement = document.getElementById('current-score');
+        // const currentScoreText = currentScoreElement.innerText;
+        // const currentScore = parseInt(currentScoreText);
+        // // 2.increase the score
         const newScore = currentScore + 1;
-        // 3.show the updated score
-        currentScoreElement.innerText = newScore;
+
+        // // 3.show the updated score
+        // currentScoreElement.innerText = newScore;
 
         //start a new round
         removeBackgroundColorById(expectedAlphabet);
         continueGame();
     } else {
-    }
+        const currentLife = getTextElementValueById('current-life');
+        const updatedLife = currentLife - 1;
+        setTextElementValueById('current-life', updatedLife);
 
+        if (updatedLife === 0) {
+            gameOver();
+        }
+
+
+        // -------------------------------------
+        // // 1. get the current life number
+        // const currentLifeElement = document.getElementById('current-life');
+        // const currentLifeText = currentLifeElement.innerText;
+        // const currentLife = parseInt(currentLifeText);
+        // // 2.decrease the  life
+        // const newLife = currentLife - 1;
+        // //3. display the update life count
+        // currentLifeElement.innerText = newLife;
+
+    }
 }
+
 //capture keyboard keypress
 document.addEventListener('keyup', handleKeyboardKeyUpEvent);
-
-
-
 
 function continueGame() /*3*/ {
     const alphabet = getARandomAlphabet();/*Step-1: generate a random alphabet*/
@@ -65,18 +86,10 @@ function play() {
     personlChanges()
 }//Step: 1
 
+function gameOver() {
+    hideElementById('play-ground');
+    showElementById('final-score');
+}
 
-//Mouseover function in home section title
-let hoverTimeout;
-function mouseOverFunction() {
-    hoverTimeout = setTimeout(() => {
-        setBackgroundColorById('alpha-text');
-    }, 300); // Change delay time as per your requirement (in milliseconds)
-}
-function mouseOutFunction() {
-    clearTimeout(hoverTimeout);
-    // Reset the background color when the mouse moves out
-    const element = document.getElementById('alpha-text');
-    element.classList.remove('bg-yellow-500');
-}
+
 

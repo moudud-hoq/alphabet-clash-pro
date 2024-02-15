@@ -19,13 +19,18 @@ function removeBackgroundColorById(elementId) {
     element.classList.remove('bg-yellow-500');
 }
 
-
-function setTextSizeById(elementId) {
+function getTextElementValueById(elementId) {
     const element = document.getElementById(elementId);
-    element.classList.add('text-xl')
-    element.classList.add('font-bold')
-    element.classList.add('text-orange-200')
-}/*Function Personal Changes*/
+    const elementValueText = element.innerText;
+    const value = parseInt(elementValueText);
+    return value;
+}//ok
+
+function setTextElementValueById(elementId, value) {
+    const element = document.getElementById(elementId);
+    element.innerText = value;
+}//ok
+
 
 //Step-2: Get a Random Alphabet
 //get or create an alphabets
